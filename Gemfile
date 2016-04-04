@@ -21,7 +21,7 @@ gem 'puma'
 # gem 'rack-cors'
 
 # Use ActiveModel::Serializer for JSON responses
-gem 'active_model_serializers', '>= 0.10.0.rc3'
+gem 'active_model_serializers', '>= 0.10.0.rc4'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
