@@ -6,7 +6,7 @@
   {{#each model as |todo|}}
     <tr>
       <td>{{ todo.title }}</td>
-      <td>{{ todo.isCompleted }}</td>
+      <td><a href="#" {{action 'toggleStatus' todo}}>{{ todo.isCompleted }}</a></td>
     </tr>
   {{/each}}
 </table>
