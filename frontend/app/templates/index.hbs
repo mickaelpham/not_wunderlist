@@ -1,1 +1,12 @@
 <h2>Welcome to Wunderlist</h2>
+
+<p>Your current todos</p>
+
+<table class="table">
+  {{#each model as |todo|}}
+    <tr>
+      <td>{{ todo.title }}</td>
+      <td>{{ todo.isCompleted }}</td>
+    </tr>
+  {{/each}}
+</table>
