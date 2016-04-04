@@ -47,8 +47,10 @@ class TodosController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def todo_params
-    parameters = ActiveModelSerializers::Deserialization.jsonapi_parse(params, only: [:title, :is_completed], keys: {'is-completed' => :is_completed})
-    Rails.logger.debug "yo from logger: #{parameters.inspect}"
-    parameters
+    ActiveModelSerializers::Deserialization.jsonapi_parse(
+      params,
+      only: [:title, :'is-completed'],
+      keys: {:'is-completed' => :is_completed}
+    )
   end
 end

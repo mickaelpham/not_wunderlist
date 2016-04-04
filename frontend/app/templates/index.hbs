@@ -5,7 +5,7 @@
 <table class="table">
   {{#each model as |todo|}}
     <tr>
-      <td>{{ todo.title }}</td>
+      <td class="{{if todo.isCompleted 'completed'}}">{{ todo.title }}</td>
       <td><a href="#" {{action 'toggleStatus' todo}}>{{ todo.isCompleted }}</a></td>
     </tr>
   {{/each}}

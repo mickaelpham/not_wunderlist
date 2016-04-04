@@ -16,3 +16,8 @@ body {
   border: 1px solid #ccc;
   padding: .5em 1em;
 }
+
+.table td.completed {
+  text-decoration: line-through;
+  color: #aaa;
+}
