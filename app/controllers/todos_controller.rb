@@ -39,13 +39,16 @@ class TodosController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_todo
-      @todo = Todo.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def todo_params
-      params.require(:todo).permit(:title, :is_completed)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_todo
+    @todo = Todo.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def todo_params
+    parameters = ActiveModelSerializers::Deserialization.jsonapi_parse(params, only: [:title, :is_completed], keys: {'is-completed' => :is_completed})
+    Rails.logger.debug "yo from logger: #{parameters.inspect}"
+    parameters
+  end
 end
