@@ -1,3 +1,4 @@
 class TodoSerializer < ActiveModel::Serializer
-  attributes :title, :is_completed
+  attribute :title
+  attribute :is_completed, key: 'is-completed'
 end
