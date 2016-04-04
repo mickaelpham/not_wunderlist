@@ -17,4 +17,5 @@
 .byebug_history
 
 # Ignore public/ directory (moved to frontend/public/ instead)
-./public/
+/public/
+!/frontend/public/
